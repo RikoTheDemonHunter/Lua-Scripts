@@ -568,12 +568,14 @@ AutoFarm:Toggle("Auto Prestige", function(v)
 	end
 end)
 
-AutoFarm:Toggle("Auto Equip", function(bool)
-	getgenv().equip = bool
-	if bool then
-		AutoEquip()
-	end
-end)
+AutoFarm:Toggle("Auto Equip", function(v)
+				getgenv().equipdrink = v
+				while getgenv().equipdrink do wait(0.8)
+					AutoEquipDrink()
+				end
+			end)
+
+loadstring(game:HttpGet("https://sonic998.github.io/sonichub/Shit/AutoEquipDrink.lua"))()
 
 AutoFarm:Toggle("Auto Collect Gem", function(v)
 	while wait(0.6) do
@@ -583,24 +585,43 @@ AutoFarm:Toggle("Auto Collect Gem", function(v)
 	end
 end)
 
-AutoFarm:Button("Auto Drink", function(v)
-	while wait(2.34) do 
-		game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Starter Drink")
-		game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Second Drink")
-		game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Third Drink")
-		game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Fourth Drink")
-		game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Fifth Drink")
-		game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Sixth Drink")
-		game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Seventh Drink")
-		game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Eighth Drink")
-		game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Ninth Drink")
-		game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Atomic Drink")
-		game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Omega Burp Juice")
-		game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Thunder Fizz")
-		game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Garlic Juice")
+AutoFarm:Button("Fast Drink",  function(v)
+				getgenv().fastdrink = v
+				while getgenv().fastdrink do wait()
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Starter Drink")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Second Drink")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Third Drink")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Fourth Drink")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Fifth Drink")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Sixth Drink")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Seventh Drink")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Eighth Drink")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Ninth Drink")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Atomic Drink")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Omega Burp Juice")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Thunder Fizz")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Garlic Juice")
+				end
+			end)
 
-	end
-end)
+AutoFarm:Button("Auto Drink", function(v)
+				getgenv().autodrink = v
+				while getgenv().autodrink do wait(2.344)
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Starter Drink")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Second Drink")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Third Drink")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Fourth Drink")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Fifth Drink")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Sixth Drink")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Seventh Drink")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Eighth Drink")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Ninth Drink")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Atomic Drink")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Omega Burp Juice")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Thunder Fizz")
+					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Garlic Juice")
+				end
+			end)
 
 LocalPlayer:Button("Remove Fps Cap", function()
 	if setfpscap and type(setfpscap) == "function" then
@@ -632,7 +653,7 @@ Teleport:Button("Safe Zone", function()
 	local char = game.Players.LocalPlayer.Character
 
 	local part = char.HumanoidRootPart
-	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear)
+	local ti = TweenInfo.new(0.2, Enum.EasingStyle.Linear)
 	local tp = {CFrame = New_CFrame}
 	ts:Create(part, ti, tp):Play()
 end)
@@ -644,7 +665,7 @@ Teleport:Button("Pet Shop", function()
 	local char = game.Players.LocalPlayer.Character
 
 	local part = char.HumanoidRootPart
-	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear)
+	local ti = TweenInfo.new(0.2, Enum.EasingStyle.Linear)
 	local tp = {CFrame = New_CFrame}
 	ts:Create(part, ti, tp):Play()
 end)
@@ -656,7 +677,7 @@ Teleport:Button("Disco Island", function()
 	local char = game.Players.LocalPlayer.Character
 
 	local part = char.HumanoidRootPart
-	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear)
+	local ti = TweenInfo.new(0.2, Enum.EasingStyle.Linear)
 	local tp = {CFrame = New_CFrame}
 	ts:Create(part, ti, tp):Play()
 end)
@@ -668,7 +689,7 @@ Teleport:Button("Cloud One", function()
 	local char = game.Players.LocalPlayer.Character
 
 	local part = char.HumanoidRootPart
-	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear)
+	local ti = TweenInfo.new(0.2, Enum.EasingStyle.Linear)
 	local tp = {CFrame = New_CFrame}
 	ts:Create(part, ti, tp):Play()
 end)
@@ -680,7 +701,7 @@ Teleport:Button("Cloud Second", function()
 	local char = game.Players.LocalPlayer.Character
 
 	local part = char.HumanoidRootPart
-	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear)
+	local ti = TweenInfo.new(0.2, Enum.EasingStyle.Linear)
 	local tp = {CFrame = New_CFrame}
 	ts:Create(part, ti, tp):Play()
 end)
@@ -692,7 +713,7 @@ Teleport:Button("Sky Island", function()
 	local char = game.Players.LocalPlayer.Character
 
 	local part = char.HumanoidRootPart
-	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear)
+	local ti = TweenInfo.new(0.2, Enum.EasingStyle.Linear)
 	local tp = {CFrame = New_CFrame}
 	ts:Create(part, ti, tp):Play()
 end)
@@ -704,7 +725,7 @@ Teleport:Button("SafePlace", function()
 	local char = game.Players.LocalPlayer.Character
 
 	local part = char.HumanoidRootPart
-	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear)
+	local ti = TweenInfo.new(0.2, Enum.EasingStyle.Linear)
 	local tp = {CFrame = New_CFrame}
 	ts:Create(part, ti, tp):Play()
 end)
@@ -716,13 +737,12 @@ Teleport:Button("FavSpot", function()
 	local char = game.Players.LocalPlayer.Character
 
 	local part = char.HumanoidRootPart
-	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear)
+	local ti = TweenInfo.new(0.2, Enum.EasingStyle.Linear)
 	local tp = {CFrame = New_CFrame}
 	ts:Create(part, ti, tp):Play()
 end)
 
-Misc:Button("Bp Counter",
-function()
+Misc:Button("Bp Counter", function()
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/RikoTheDemonHunter/V3/refs/heads/main/Bp%20Counter.lua"))()
 end)
@@ -762,18 +782,6 @@ Credits:Button("Made By Rikoplayz")
 Credits:Button("Discord: rikothedemonlord")
 Credits:Button("Note: Copy Stealers Fuck Off")
 Credits:Button("Update: Script is in Beta!")
-Scripts:Button("SimonHub", function()
-           loadstring(game:HttpGet("https://raw.githubusercontent.com/RikoTheDemonHunter/V3/refs/heads/main/SimonHub"))()
-end)
-Scripts:Button("SimonHax", function()
-           loadstring(game:HttpGet("https://raw.githubusercontent.com/RikoTheDemonHunter/V3/main/SimonHax"))()
-end)
-Scripts:Button("Drinkhaxx", function()
-           loadstring(game:HttpGet("https://raw.githubusercontent.com/RikoTheDemonHunter/V3/main/drinkhaxx"))()
-end)
-Scripts:Button("V7", function()
-           loadstring(game:HttpGet("https://raw.githubusercontent.com/RikoTheDemonHunter/V3/refs/heads/main/V7"))()
-end)
 Scripts:Button("Shift-Lock", function()
           loadstring(game:HttpGet("https://raw.githubusercontent.com/RikoTheDemonHunter/Lua-Scripts/refs/heads/main/Perm%20Shift%20Lock.lua"))()
 end)
