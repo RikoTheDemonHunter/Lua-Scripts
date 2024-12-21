@@ -585,7 +585,7 @@ AutoFarm:Toggle("Auto Collect Gem", function(v)
 	end
 end)
 
-AutoFarm:Button("Fast Drink", function(v)
+AutoFarm:Toggle("Fast Drink", function(v)
 				getgenv().fastdrink = v
 				while getgenv().fastdrink do wait()
 					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Starter Drink")
@@ -622,7 +622,6 @@ AutoFarm:Button("Auto Drink", function(v)
 					game.ReplicatedStorage.RemoteEvents.DrinkEvent:FireServer("Garlic Juice")
 				end
 			end)
-
 LocalPlayer:Button("Remove Fps Cap", function()
 	if setfpscap and type(setfpscap) == "function" then
 		local num = 100000 or 1e6
