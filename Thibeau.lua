@@ -758,6 +758,18 @@ end)
 Misc:Button("Animation-Hub", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Gazer-Ha/Animated/main/G"))()
 end)
+
+Misc:Toggle("Walk On Water", function(bool)
+				getgenv().walkonwater = bool
+				for i,v in pairs(workspace:GetChildren()) do
+					if v:IsA("Part") then
+						if v.Color == Color3.fromRGB(9, 137, 207) then
+							v.CanCollide = getgenv().walkonwater
+						end
+					end
+				end
+			end)
+
 Credits:Button("Made By Rikoplayz")
 
 Credits:Button("Discord: rikothedemonlord")
