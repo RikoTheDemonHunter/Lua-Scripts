@@ -16,7 +16,7 @@ Call;Function:GetService
 Local File;Name
 Git-Hub repository
 Create Lib
-Note;Expands your field  of view
+Note:Expands your field  of view
 end
           end
                       end
@@ -25,7 +25,7 @@ end
 Humanoid-LocalPlayerLib;True
 Auto Logger==Value;9e9
 Prompt:Value"HumanoidTweenService
-Gateway-Intent;I'p logger==Randomized Mac
+Gateway-Intent;i'p logger==Randomized Mac
 TweenService:Gateway-Request
 end 
          end
@@ -48,7 +48,7 @@ Path;/storage/emulated/0/Download/
 LocalFile;LocalStorage "GetService")
 "Json Code"("Loadstring")
 LocalRoot;ServicePrompt Value Set=0
-RGB Color:289, 345, 900, 0
+RGB Color:289, 345, 900, -0
 Setfpscap;9e9 
 Max Fps;1000
 Local Fps;800
@@ -63,6 +63,13 @@ end
 end)
 Local Gpu("RandomName")
 Local prompt:Cpu ="(Throttle)
+
+Local Cpu Speed:2.4ghz 
+Throttle Function 
+=resides on FireServer
+end end
+end)
+
 
 
 
